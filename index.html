@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skein — Knit and Grade</title>
+<meta name="description" content="A knitting studio for your pocket. Grade a pattern across sizes, write it up, and export it — plus a row counter, yarn stash, and gauge tool for every project.">
+<style>
+  :root{
+    --cream:#FFFFFF; --paper:#F7F6F4; --ink:#1C1C1E; --taupe:#8E8E93;
+    --sage:#8BA4A8; --spruce:#B8C9CC; --clay:#D4776B; --line:#E8E5E0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--ink); background:var(--cream); line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:0 1.5rem}
+
+  /* ---- Hero ---- */
+  header{
+    background:linear-gradient(140deg,var(--sage) 0%,var(--spruce) 100%);
+    color:#fff; padding:4.5rem 0 4rem; text-align:center;
+  }
+  .wordmark{
+    font-size:clamp(2.2rem,7vw,3.4rem); font-weight:200; letter-spacing:.42em;
+    text-indent:.42em; margin-bottom:1.1rem;
+  }
+  .tagline{font-size:clamp(1.05rem,2.6vw,1.35rem);font-weight:300;max-width:30ch;margin:0 auto 1.4rem;opacity:.96}
+  .sub{font-size:.95rem;opacity:.85;max-width:46ch;margin:0 auto}
+  .cta{
+    display:inline-block;margin-top:2rem;padding:.85rem 2rem;background:#fff;color:var(--ink);
+    border-radius:100px;text-decoration:none;font-weight:600;font-size:.95rem;
+    box-shadow:0 6px 20px rgba(0,0,0,.13);
+  }
+  .cta-note{display:block;margin-top:.85rem;font-size:.8rem;opacity:.8}
+
+  /* ---- Sections ---- */
+  section{padding:4rem 0;border-bottom:1px solid var(--line)}
+  .eyebrow{
+    font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--sage);margin-bottom:.7rem;
+  }
+  h2{font-size:clamp(1.4rem,3.4vw,1.9rem);font-weight:300;letter-spacing:-.01em;margin-bottom:.9rem}
+  .lede{color:#5a5550;max-width:60ch;margin-bottom:2.2rem;font-size:1rem}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.1rem}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1.5rem}
+  .card h3{font-size:1rem;font-weight:600;margin-bottom:.45rem}
+  .card p{font-size:.9rem;color:#5a5550}
+  .tag{
+    display:inline-block;margin-bottom:.7rem;padding:.2rem .6rem;border-radius:100px;
+    font-size:.65rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  }
+  .tag-free{background:rgba(139,164,168,.18);color:#5c7b80}
+  .tag-pro{background:rgba(212,119,107,.16);color:#a8503f}
+
+  /* ---- Pricing ---- */
+  .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.1rem;margin-top:.5rem}
+  .plan{border:1px solid var(--line);border-radius:16px;padding:1.8rem;background:#fff}
+  .plan.featured{border-color:var(--sage);border-width:2px;box-shadow:0 8px 26px rgba(139,164,168,.16)}
+  .plan h3{font-size:1.05rem;font-weight:600;margin-bottom:.2rem}
+  .plan .amount{font-size:1.9rem;font-weight:300;margin:.5rem 0 .2rem}
+  .plan .per{font-size:.85rem;color:var(--taupe);margin-bottom:1.1rem}
+  .plan ul{list-style:none;font-size:.9rem;color:#5a5550}
+  .plan li{padding:.32rem 0 .32rem 1.4rem;position:relative}
+  .plan li::before{content:"·";position:absolute;left:.45rem;color:var(--sage);font-weight:700;font-size:1.2rem;line-height:1.2}
+
+  .note{
+    margin-top:2rem;padding:1.1rem 1.3rem;background:var(--paper);
+    border-left:3px solid var(--sage);border-radius:0 10px 10px 0;font-size:.88rem;color:#5a5550;
+  }
+
+  footer{padding:3rem 0 4rem;text-align:center;font-size:.85rem;color:var(--taupe)}
+  footer a{color:#5a5550;text-decoration:none;margin:0 .6rem}
+  footer a:hover{text-decoration:underline}
+  .copyright{margin-top:1.2rem;font-size:.78rem}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="wordmark">SKEIN</div>
+    <p class="tagline">Knit and Grade</p>
+    <p class="sub">A knitting studio for your pocket — grade a pattern across every size, write it up, and export it ready to publish.</p>
+    <!-- TODO: replace # with your App Store URL once live -->
+    <a class="cta" href="#">Download on the App Store</a>
+    <span class="cta-note">iPhone · Free, with an optional Designer Pro subscription</span>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">For knitters</p>
+    <h2>Everything you need while you're on the needles</h2>
+    <p class="lede">The tools you reach for on every project — free, with no account and nothing stored on anyone else's server.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="tag tag-free">Free</span>
+        <h3>Project Tracker</h3>
+        <p>A row counter that keeps its place — current section, rows worked, and notes, saved as you go.</p>
+      </div>
+      <div class="card">
+        <span class="tag tag-free">Free</span>
+        <h3>Yarn Stash</h3>
+        <p>Log what you own by brand, colorway, and fiber. Each weight shows a true-to-scale strand, so lace really does look finer than bulky.</p>
+      </div>
+      <div class="card">
+        <span class="tag tag-free">Free</span>
+        <h3>Gauge &amp; Needle Tool</h3>
+        <p>A digital take on the all-in-one notion — swatch gauge window, needle size conversions, and a ruler edge, on one page.</p>
+      </div>
+      <div class="card">
+        <span class="tag tag-free">Free</span>
+        <h3>Pattern Library</h3>
+        <p>Keep your patterns together, mark favorites, and start a project straight from one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">For designers</p>
+    <h2>Grade it once. Publish every size.</h2>
+    <p class="lede">Grading is the part that eats an afternoon and a spreadsheet. Skein does the arithmetic, tells you when a size won't work, and hands you pattern language you can paste straight into your draft.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="tag tag-pro">Designer Pro</span>
+        <h3>Grading Calculator</h3>
+        <p>Enter your gauge and finished measurements and get cast-on counts, shaping, and row counts for the whole size run — written out as instructions, not just a table of numbers.</p>
+      </div>
+      <div class="card">
+        <span class="tag tag-pro">Designer Pro</span>
+        <h3>Designer Workspace</h3>
+        <p>Write the pattern with your gauge, sizes, and construction alongside it, and drop your grading table in where you need it.</p>
+      </div>
+      <div class="card">
+        <span class="tag tag-pro">Designer Pro</span>
+        <h3>Pattern PDF</h3>
+        <p>Export a clean, multi-page PDF with your title, designer name, specs, and instructions — ready to send to testers or sell.</p>
+      </div>
+      <div class="card">
+        <span class="tag tag-pro">Designer Pro</span>
+        <h3>Submission Pitch Kit</h3>
+        <p>Build a one-page pitch with your concept, specs, yarn suggestion, and bio — formatted the way an editor expects to receive it.</p>
+      </div>
+    </div>
+    <div class="note">
+      <strong>On the math.</strong> Skein currently grades top-down raglan construction. Every count it prints is a count you'll actually have if you follow the instructions — the table, the shaping, and the stitch totals are checked against each other for every size. More constructions are on the way.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Pricing</p>
+    <h2>Free to knit. Pay only to design.</h2>
+    <p class="lede">The tracker, stash, gauge tool, and library are free forever, with no account required. Designer Pro unlocks the grading and publishing tools.</p>
+    <div class="price-grid">
+      <div class="plan">
+        <h3>Knitter</h3>
+        <div class="amount">Free</div>
+        <div class="per">No account, no ads</div>
+        <ul>
+          <li>Project Tracker &amp; row counter</li>
+          <li>Yarn Stash</li>
+          <li>Gauge &amp; Needle Tool</li>
+          <li>Pattern Library</li>
+        </ul>
+      </div>
+      <div class="plan featured">
+        <h3>Designer Pro</h3>
+        <div class="amount">$59.99<span style="font-size:1rem;font-weight:400">/year</span></div>
+        <div class="per">or $7.99/month · 7-day free trial</div>
+        <ul>
+          <li>Everything in Knitter</li>
+          <li>Grading Calculator</li>
+          <li>Designer Workspace</li>
+          <li>Pattern PDF export</li>
+          <li>Submission pitch kit</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="mailto:support@skeinknit.com">Support</a>·
+    <a href="privacy-policy.html">Privacy Policy</a>·
+    <a href="terms-of-service.html">Terms of Service</a>
+    <p class="copyright">© 2026 Nice People Collective LLC</p>
+  </div>
+</footer>
+
+</body>
+</html>
