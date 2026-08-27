@@ -4,7 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Skein — Knit and Grade</title>
-<meta name="description" content="A knitting studio for your pocket. Grade a pattern across sizes, write it up, and export it — plus a row counter, yarn stash, and gauge tool for every project.">
+<meta name="description" content="Grade a knitwear design across every size, with the math verified. Four constructions, XS–5XL, live schematics and yardage. Free tools for knitters; Designer Pro for publishing.">
+<link rel="canonical" href="https://skeinknit.com/">
+<meta property="og:title" content="Skein — Knit and Grade">
+<meta property="og:description" content="The grading calculator for knitwear designers. Four constructions, nine sizes, every stitch count verified.">
+<meta property="og:url" content="https://skeinknit.com/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root{
     --cream:#FFFFFF; --paper:#F7F6F4; --ink:#1C1C1E; --taupe:#8E8E93;
@@ -28,14 +34,22 @@
     font-size:clamp(2.2rem,7vw,3.4rem); font-weight:200; letter-spacing:.42em;
     text-indent:.42em; margin-bottom:1.1rem;
   }
-  .tagline{font-size:clamp(1.05rem,2.6vw,1.35rem);font-weight:300;max-width:30ch;margin:0 auto 1.4rem;opacity:.96}
-  .sub{font-size:.95rem;opacity:.85;max-width:46ch;margin:0 auto}
+  .tagline{font-size:clamp(1.25rem,3.2vw,1.7rem);font-weight:300;max-width:22ch;margin:0 auto 1.1rem;opacity:.98;line-height:1.35}
+  .sub{font-size:1rem;opacity:.9;max-width:48ch;margin:0 auto}
   .cta{
-    display:inline-block;margin-top:2rem;padding:.85rem 2rem;background:#fff;color:var(--ink);
-    border-radius:100px;text-decoration:none;font-weight:600;font-size:.95rem;
-    box-shadow:0 6px 20px rgba(0,0,0,.13);
+    display:inline-block;margin-top:2rem;padding:.9rem 2.1rem;background:#fff;color:var(--ink);
+    border-radius:100px;text-decoration:none;font-weight:600;font-size:.98rem;
+    box-shadow:0 6px 20px rgba(0,0,0,.13);transition:transform .15s ease;
   }
-  .cta-note{display:block;margin-top:.85rem;font-size:.8rem;opacity:.8}
+  .cta:hover{transform:translateY(-2px)}
+  .cta-note{display:block;margin-top:.9rem;font-size:.82rem;opacity:.88}
+
+  /* ---- Credential strip ---- */
+  .credential{
+    background:var(--paper);border-bottom:1px solid var(--line);
+    padding:1.4rem 0;text-align:center;font-size:.92rem;color:#5a5550;
+  }
+  .credential strong{color:var(--ink);font-weight:600}
 
   /* ---- Sections ---- */
   section{padding:4rem 0;border-bottom:1px solid var(--line)}
@@ -43,8 +57,8 @@
     font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
     color:var(--sage);margin-bottom:.7rem;
   }
-  h2{font-size:clamp(1.4rem,3.4vw,1.9rem);font-weight:300;letter-spacing:-.01em;margin-bottom:.9rem}
-  .lede{color:#5a5550;max-width:60ch;margin-bottom:2.2rem;font-size:1rem}
+  h2{font-size:clamp(1.4rem,3.4vw,1.95rem);font-weight:300;letter-spacing:-.01em;margin-bottom:.9rem}
+  .lede{color:#5a5550;max-width:62ch;margin-bottom:2.2rem;font-size:1rem}
 
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.1rem}
   .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1.5rem}
@@ -56,6 +70,47 @@
   }
   .tag-free{background:rgba(139,164,168,.18);color:#5c7b80}
   .tag-pro{background:rgba(212,119,107,.16);color:#a8503f}
+
+  /* ---- Screens ---- */
+  .screens{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.6rem;margin-top:2.4rem}
+  .screen{text-align:center}
+  .screen img{
+    width:100%;max-width:250px;height:auto;border-radius:20px;
+    border:1px solid var(--line);box-shadow:0 10px 30px rgba(28,28,30,.10);
+  }
+  .screen figcaption{margin-top:.85rem;font-size:.82rem;color:var(--taupe);line-height:1.5}
+
+  /* ---- Verification callout ---- */
+  .verify{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    padding:2rem;margin-top:2.4rem;
+  }
+  .verify h3{font-size:1.1rem;font-weight:600;margin-bottom:.6rem}
+  .verify p{font-size:.94rem;color:#5a5550;max-width:64ch}
+  .stat-row{display:flex;flex-wrap:wrap;gap:2.4rem;margin-top:1.6rem}
+  .stat .n{font-size:1.7rem;font-weight:300;color:var(--sage);line-height:1}
+  .stat .l{font-size:.76rem;text-transform:uppercase;letter-spacing:.11em;color:var(--taupe);margin-top:.35rem}
+
+  /* ---- Email capture ---- */
+  .signup{background:var(--paper)}
+  .signup form{display:flex;flex-wrap:wrap;gap:.7rem;max-width:480px;margin-top:1.4rem}
+  .signup input[type=email]{
+    flex:1 1 240px;padding:.85rem 1.1rem;border:1px solid var(--line);border-radius:100px;
+    font-size:.95rem;font-family:inherit;background:#fff;color:var(--ink);
+  }
+  .signup input[type=email]:focus{outline:2px solid var(--sage);outline-offset:1px}
+  .signup button{
+    padding:.85rem 1.8rem;border:0;border-radius:100px;background:var(--ink);color:#fff;
+    font-size:.95rem;font-weight:600;font-family:inherit;cursor:pointer;
+  }
+  .signup button:hover{background:#000}
+  .signup .fineprint{margin-top:.9rem;font-size:.8rem;color:var(--taupe)}
+  .signup-cta{
+    display:inline-block;margin-top:.6rem;padding:.85rem 1.9rem;border-radius:100px;
+    background:var(--ink);color:#fff;text-decoration:none;font-size:.95rem;font-weight:600;
+    transition:transform .15s ease;
+  }
+  .signup-cta:hover{background:#000;transform:translateY(-2px)}
 
   /* ---- Pricing ---- */
   .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.1rem;margin-top:.5rem}
@@ -84,19 +139,24 @@
 <header>
   <div class="wrap">
     <div class="wordmark">SKEIN</div>
-    <p class="tagline">Knit and Grade</p>
-    <p class="sub">A knitting studio for your pocket — grade a pattern across every size, write it up, and export it ready to publish.</p>
-    <!-- TODO: replace # with your App Store URL once live -->
-    <a class="cta" href="#">Download on the App Store</a>
-    <span class="cta-note">iPhone · Free, with an optional Designer Pro subscription</span>
+    <p class="tagline">The math behind a published pattern.</p>
+    <p class="sub">Grade a design across every size — raglan, circular yoke, set-in sleeve, or drop shoulder — with instructions written to match and every stitch count verified.</p>
+    <a class="cta" href="https://apps.apple.com/us/app/skein-knit-and-grade/id6780070426">Download on the App Store</a>
+    <span class="cta-note">iPhone · iPad · Free, with an optional Designer Pro subscription</span>
   </div>
 </header>
+
+<div class="credential">
+  <div class="wrap">
+    Built by a knitwear designer with <strong>professional industry experience</strong> — not a generic calculator, but the method, encoded.
+  </div>
+</div>
 
 <section>
   <div class="wrap">
     <p class="eyebrow">For knitters</p>
-    <h2>Everything you need while you're on the needles</h2>
-    <p class="lede">The tools you reach for on every project — free, with no account and nothing stored on anyone else's server.</p>
+    <h2>Free tools for every project</h2>
+    <p class="lede">The things you reach for on the needles — free forever, no account, nothing stored on anyone else's server.</p>
     <div class="grid">
       <div class="card">
         <span class="tag tag-free">Free</span>
@@ -111,12 +171,12 @@
       <div class="card">
         <span class="tag tag-free">Free</span>
         <h3>Gauge &amp; Needle Tool</h3>
-        <p>A digital take on the all-in-one notion — swatch gauge window, needle size conversions, and a ruler edge, on one page.</p>
+        <p>A digital take on the all-in-one notion — swatch gauge window, needle conversions to the Craft Yarn Council standard, and a ruler edge.</p>
       </div>
       <div class="card">
         <span class="tag tag-free">Free</span>
-        <h3>Pattern Library</h3>
-        <p>Keep your patterns together, mark favorites, and start a project straight from one.</p>
+        <h3>Grade one full size</h3>
+        <p>The whole grading calculator, free, for one size. See exactly what designing your own pattern looks like before you pay anything.</p>
       </div>
     </div>
   </div>
@@ -126,40 +186,102 @@
   <div class="wrap">
     <p class="eyebrow">For designers</p>
     <h2>Grade it once. Publish every size.</h2>
-    <p class="lede">Grading is the part that eats an afternoon and a spreadsheet. Skein does the arithmetic, tells you when a size won't work, and hands you pattern language you can paste straight into your draft.</p>
+    <p class="lede">Grading is the part that eats an afternoon and a spreadsheet — and the part where a stranded stitch quietly ruins a size you'll never knit yourself. Skein does the arithmetic, tells you when a size won't work, and hands you pattern language you can paste straight into your draft.</p>
+
     <div class="grid">
       <div class="card">
         <span class="tag tag-pro">Designer Pro</span>
-        <h3>Grading Calculator</h3>
-        <p>Enter your gauge and finished measurements and get cast-on counts, shaping, and row counts for the whole size run — written out as instructions, not just a table of numbers.</p>
+        <h3>Four constructions</h3>
+        <p>Top-down raglan, circular yoke, set-in sleeve, and drop shoulder — each built from published industry method, not guesswork.</p>
       </div>
       <div class="card">
         <span class="tag tag-pro">Designer Pro</span>
-        <h3>Designer Workspace</h3>
-        <p>Write the pattern with your gauge, sizes, and construction alongside it, and drop your grading table in where you need it.</p>
+        <h3>The armscye check</h3>
+        <p>For set-in sleeves, Skein compares the cap edge to the armhole it eases into and reports the ease honestly — the part of set-in design that most often goes wrong.</p>
       </div>
       <div class="card">
         <span class="tag tag-pro">Designer Pro</span>
-        <h3>Pattern PDF</h3>
-        <p>Export a clean, multi-page PDF with your title, designer name, specs, and instructions — ready to send to testers or sell.</p>
+        <h3>Sizes XS–5XL</h3>
+        <p>Nine sizes with proper per-size shaping — not one number scaled up. Size-inclusive grading is the loudest demand in modern knitwear.</p>
       </div>
       <div class="card">
         <span class="tag tag-pro">Designer Pro</span>
-        <h3>Submission Pitch Kit</h3>
-        <p>Build a one-page pitch with your concept, specs, yarn suggestion, and bio — formatted the way an editor expects to receive it.</p>
+        <h3>Yardage estimates</h3>
+        <p>Per-size yarn requirements. Weigh a swatch and enter your ball band for an accurate figure, or get a gauge-based estimate instantly.</p>
+      </div>
+      <div class="card">
+        <span class="tag tag-pro">Designer Pro</span>
+        <h3>Live schematic</h3>
+        <p>A flat measurement diagram drawn from the counts Skein actually produces — so the drawing can never disagree with the instructions.</p>
+      </div>
+      <div class="card">
+        <span class="tag tag-pro">Designer Pro</span>
+        <h3>Workspace &amp; PDF export</h3>
+        <p>Write the pattern with your gauge, sizes, and construction alongside it, then export a clean multi-page PDF for testers or sale.</p>
       </div>
     </div>
-    <div class="note">
-      <strong>On the math.</strong> Skein currently grades top-down raglan construction. Every count it prints is a count you'll actually have if you follow the instructions — the table, the shaping, and the stitch totals are checked against each other for every size. More constructions are on the way.
+
+    <div class="screens">
+      <figure class="screen">
+        <img src="img/2-set-in-schematic.png" alt="Skein showing a set-in sleeve schematic with measurements drawn from achieved stitch counts">
+        <figcaption>Set-in sleeve, drawn to scale from the achieved counts</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="img/3-drop-shoulder.png" alt="Skein showing drop shoulder schematic and a sleeve-to-armhole fit check">
+        <figcaption>Drop shoulder, with the sleeve-to-armhole fit checked</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="img/4-yardage.png" alt="Skein's yarn and yardage inputs above the full XS to 5XL size table">
+        <figcaption>Per-size yardage, from your weighed swatch</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="img/1-home.png" alt="Skein home screen showing quick tools for grading, workspace, gauge and stash">
+        <figcaption>Free knitter tools alongside the designer tools</figcaption>
+      </figure>
     </div>
+
+    <div class="verify">
+      <h3>Every count is a count you'll actually have</h3>
+      <p>That's the rule the whole engine is built on. The size table, the stitch split, and the written instructions are asserted to agree — for every size, on every launch. If a size genuinely won't work, Skein says so instead of printing a number that looks fine and isn't.</p>
+      <div class="stat-row">
+        <div class="stat"><div class="n">214</div><div class="l">Checks per launch</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">Constructions</div></div>
+        <div class="stat"><div class="n">9</div><div class="l">Sizes, XS–5XL</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="signup">
+  <div class="wrap">
+    <p class="eyebrow">Stay in the loop</p>
+    <h2>New constructions, in your inbox</h2>
+    <p class="lede">Full pattern generation, more constructions, and the Mac version are all in progress. Leave your email and I'll tell you when they land — nothing else, and never shared.</p>
+    <!-- ============================================================
+         EMAIL CAPTURE
+         Currently a mailto link, which works with no service to set up.
+
+         TO UPGRADE to a real signup form (recommended once there's
+         traffic): create a free form at https://formspree.io (or
+         Buttondown / Kit / MailerLite — any of them give you a POST
+         endpoint), then delete the <a> below and uncomment the <form>.
+         Replace FORM_ID with the id the service gives you.
+
+         <form action="https://formspree.io/f/FORM_ID" method="POST">
+           <input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required>
+           <button type="submit">Keep me posted</button>
+         </form>
+         ============================================================ -->
+    <a class="signup-cta" href="mailto:support@skeinknit.com?subject=Keep%20me%20posted&amp;body=Add%20me%20to%20the%20Skein%20mailing%20list.">Email me when there's news</a>
+    <p class="fineprint">Goes straight to my inbox. No spam, no list-selling, unsubscribe whenever.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <p class="eyebrow">Pricing</p>
-    <h2>Free to knit. Pay only to design.</h2>
-    <p class="lede">The tracker, stash, gauge tool, and library are free forever, with no account required. Designer Pro unlocks the grading and publishing tools.</p>
+    <h2>Free to knit. Pay only to publish.</h2>
+    <p class="lede">The tracker, stash, gauge tool, and one full graded size are free forever, with no account required. Designer Pro unlocks the whole size run and the publishing tools.</p>
     <div class="price-grid">
       <div class="plan">
         <h3>Knitter</h3>
@@ -170,6 +292,7 @@
           <li>Yarn Stash</li>
           <li>Gauge &amp; Needle Tool</li>
           <li>Pattern Library</li>
+          <li>One fully graded size</li>
         </ul>
       </div>
       <div class="plan featured">
@@ -178,19 +301,25 @@
         <div class="per">or $7.99/month · 7-day free trial</div>
         <ul>
           <li>Everything in Knitter</li>
-          <li>Grading Calculator</li>
+          <li>All nine sizes, XS–5XL</li>
+          <li>All four constructions</li>
+          <li>Yardage estimates</li>
           <li>Designer Workspace</li>
           <li>Pattern PDF export</li>
           <li>Submission pitch kit</li>
         </ul>
       </div>
     </div>
+    <div class="note">
+      <strong>For context:</strong> having a single design graded for you runs roughly <strong>$300–800</strong>, and a grading course runs $250–350. Designer Pro is a year of grading every pattern you write.
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <a href="mailto:support@skeinknit.com">Support</a>·
+    <a href="support.html">Support</a>·
+    <a href="mailto:support@skeinknit.com">support@skeinknit.com</a>·
     <a href="privacy-policy.html">Privacy Policy</a>·
     <a href="terms-of-service.html">Terms of Service</a>
     <p class="copyright">© 2026 Nice People Collective LLC</p>
