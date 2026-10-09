@@ -24,7 +24,7 @@ There is no way to run anything here.
 | `support.html` | Real contact info. Apple requires the Support URL to lead here, not to the privacy policy |
 | `privacy-policy.html` | Must describe what the app actually does |
 | `terms-of-service.html` | Terms |
-| `img/` | App screenshots used on the landing page |
+| `img/app/` | App screens (JPEG) and the hero iPad recording (MP4) used on the landing page |
 | `og-image.png` | Social card image, 1200x630 |
 | `robots.txt`, `sitemap.xml` | Crawling |
 | `CNAME` | `skeinknit.com` |
@@ -32,12 +32,20 @@ There is no way to run anything here.
 ## The palette mirrors the app
 
 ```
---cream:#FFFFFF  --paper:#F7F6F4  --ink:#1C1C1E   --taupe:#8E8E93
---sage:#8BA4A8   --spruce:#B8C9CC --clay:#D4776B  --line:#E8E5E0
+--cream:#FAF6F0  --card:#F3ECE2    --ink:#2B1F18      --taupe:#9A8878
+--chestnut:#8A4B2F (SkeinTheme.sage)  --clay:#C5714A   --line:rgba(43,31,24,.09)
 ```
 
-These are the same values as `SkeinTheme` in the app. If one side changes, both
-change. The wordmark is wide-tracked light caps, matching the app's nav titles.
+These are `SkeinTheme` in the app after its 2026-09-01 warm chestnut repaint
+(the earlier sage/spruce site palette predates it and was wrong). If one side
+changes, both change. Type is Inter from Google Fonts, weights 200 to 600; the
+wordmark is 200-weight caps tracked .42em, matching the app's nav titles.
+
+Device frames (iPad, iPhone, Mac) are pure CSS; the screens inside them are
+JPEGs in `img/app/` made from `Marketing/screenshots-1.6/` in the app repo,
+plus `img/app/ipad-grade.mp4`, a simulator recording that plays in the hero
+iPad (the poster JPEG shows if the video is missing or motion is reduced).
+Rebuild the JPEGs from the app repo when the screens change, never retouch.
 
 ## Every claim on this page has to be true
 
@@ -48,9 +56,13 @@ well-meaning edit.
   monthly price and a trial length. So does the JSON-LD block in the head, and
   so does the pricing section. All three have to agree with what the App Store
   actually charges.
-- **Feature claims must match the shipped build**, not the roadmap. The app
-  currently grades four sweater constructions across nine sizes. It does not do
-  hats, socks, or shawls. Do not let aspirational copy describe them.
+- **Feature claims must match the shipped build**, not the roadmap. The live
+  build is 1.6 (2026-09-29): six constructions (raglan, circular yoke, set-in,
+  drop shoulder, hat, sock), nine sizes, iCloud sync, Mac. The stat "478
+  checks on every launch" is 1.6's engine self-check count; 1.7 raises it.
+  Units in centimetres, Knit your size, How Much Yarn, highlight my size,
+  read aloud and Siri counting are 1.7 and are only named as "in the works"
+  in the signup section until 1.7 is live.
 - **The free and paid split stated here is a promise.** Row counter, yarn stash,
   gauge tool, pattern library, and one fully graded size are free forever.
 - **The privacy policy must match actual behaviour.** It names Mixpanel, says
