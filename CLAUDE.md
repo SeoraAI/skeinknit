@@ -26,6 +26,7 @@ There is no way to run anything here.
 | `terms-of-service.html` | Terms |
 | `img/app/` | App screens (JPEG) and the hero iPad recording (MP4) used on the landing page |
 | `og-image.png` | Social card image, 1200x630 |
+| `brand/` | Vector logo: S mark, wordmark, lockups, app icon and avatar in ink, chestnut and cream. See `brand/README.md` |
 | `robots.txt`, `sitemap.xml` | Crawling |
 | `CNAME` | `skeinknit.com` |
 
