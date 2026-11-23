@@ -1,6 +1,6 @@
 # skeinknit.com
 
-The marketing site for **Skein — Knit and Grade**, the iOS and Mac knitwear
+The marketing site for **SKEIN: Your Knitting Studio** (App Store name; earlier "Skein: Knitting Pattern Design" and "Skein — Knit and Grade"), the iOS and Mac knitwear
 grading app. Static HTML served by GitHub Pages from the repository root, with
 `CNAME` pointing the apex domain at it.
 
@@ -88,6 +88,10 @@ The head of `index.html` carries a JSON-LD `SoftwareApplication` block plus
 Open Graph and Twitter card tags. The description, price, and operating system
 in that block are duplicated from the visible page. Change one, change both, or
 search results will disagree with the page they link to.
+
+The App Store links keep the old `skein-knitting-pattern-design` slug on
+purpose: Apple routes by the numeric id (`id6780070426`), so the old slug
+still opens the listing. Change the slug only after checking the new one opens.
 
 `sitemap.xml` lists every page. Add new pages to it.
 
