@@ -58,12 +58,12 @@ well-meaning edit.
   so does the pricing section. All three have to agree with what the App Store
   actually charges.
 - **Feature claims must match the shipped build**, not the roadmap. The live
-  build is 1.6 (2026-09-29): six constructions (raglan, circular yoke, set-in,
-  drop shoulder, hat, sock), nine sizes, iCloud sync, Mac. The stat "478
-  checks on every launch" is 1.6's engine self-check count; 1.7 raises it.
-  Units in centimetres, Knit your size, How Much Yarn, highlight my size,
-  read aloud and Siri counting are 1.7 and are only named as "in the works"
-  in the signup section until 1.7 is live.
+  build is 1.7: six constructions (raglan, circular yoke, set-in, drop
+  shoulder, hat, sock), nine sizes, iCloud sync, Mac, plus 1.7's inches or
+  centimetres, Knit your size, How Much Yarn, highlight my size, read aloud
+  and Siri counting. Do not merge the change that says so until 1.7 is
+  approved and live. The stat "N checks on every launch" must be the
+  engine self-check count the shipped build prints at launch.
 - **The free and paid split stated here is a promise.** Row counter, yarn stash,
   gauge tool, pattern library, and one fully graded size are free forever.
 - **The privacy policy must match actual behaviour.** It names Mixpanel, says
